@@ -2,68 +2,69 @@
 Це код container файлу для summary сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
-
+<header>
+   <h1>{{name}} </h1> 
+   <h2><em>({{birthdate}} - {{deathdate}})</em></h2>
+   <h3>BIRTHPLACE: {{birthplace}}</h3>
+   <h3>DEATHPLACE: {{deathplace}}</h3>
+   <hr>
+   <p>{{nationality}}</p>
+   <p>{{occupation}}</p>
+   <hr>
+   <h4>{{known_for}}</h4>
+   </header>
 <div>
-    {{#with person}}
+    {{#each education}}
     <div>
-        <h1>{{name}}</h1>
-        <h2>{{age}} {{gender}}</h2>
-
+        <h2>{{degree}}</h2>
+        <h3>{{field}}, {{institution}}, ({{year}})</h3>
     </div>
-    {{/with}}
-    {{#with person.address}}
+    {{/each}}
+    <hr>
+    PUBLICATIONS:
+    <section>
+        {{#each notable_publications}}
+        <ul>
+            <li><h3>{{title}} ({{year}})</h3></li>
+        </ul>
+        {{/each}}
+    </section>
+    <hr>PARTNERS:
+    <section>
+        {{#each partners}}
+        <ul>
+            <li><h3>{{name}}, ({{relationship}}) ({{years}})</h3></li>
+        </ul>
+        {{/each}}
+    </section>
+    <hr>AWARDS:
+    <section>
+        {{#each awards}}
+        <h3>{{title}}, ({{year}}) ({{description}})</h3>
+        {{/each}}
+    </section>
+    <section>
+        <h3>{{influences}}</h3>
+        <h3>{{influenced}}</h3>
+        <h3>{{quotes}}</h3> 
+    </section>
+    <hr>
+    <section>
+        {{#each major_discoveries}}
+        <h3>{{title}}, ({{year}}) ({{description}})</h3>
+        {{/each}}
+    </section>
+    <section>
+        {{#with contributions}}
+        <h3>{{title}}, ({{year}}) ({{description}}) {{field}}</h3>
+        {{/with}}
+    </section>
     <div>
         <p> {{zip}} {{country}} {{state}} {{city}} {{street}}</p>
     </div>
-    {{/with}}
+ 
     <hr>
-        <section>
-            <h3>MY EDUCATION:</h3>
-                {{#each person.education}}
-                    <h4> {{degree}}, </h4>
-                    <p>{{major}}, {{university}}, {{graduationYear}}<p>
-                {{/each}}  
-        </section>
-        <hr>
-    <div>
-        <h3>WORK EXPERIENCE:</h3>
-                {{#each person.workExperience}}
-                    <h4> {{company}}, </h4>
-                    <p>{{title}}, (from {{startDate}} to {{endDate}}),<p>
-                    <p>{{responsibilities}}</p>
-                    <hr>
-                    <h4>{{industry}} {{year_founded}}</h4>
-                    <hr>
-                    <h3>Employees:</h3>
-                        {{#each employees}}
-                            <h3><p>{{name}}</p></h3>
-                            <h3>{{position}}</h3> {{department}}
-                            {{#each projects}}
-                                <h2> {{name}}  </h2
-                                <h3>{{description}}  ({{status}})</h3>
-                                <hr>
-                                <section>
-                                <h3><em>TEAMS</em></h3>
-                                    {{#each teams}}
-                                        <h2>{{team_name}}</h2>
-                                        {{#with team_leader}}
-                                        <p>{{name}}  ({{title}})  ({{email}})<p>
-                                        {{/with}}
-                                        {{#each team_members}}
-                                            <h3>{{name}},  {{title}}, ({{email}}) ({{skills}})</h3>
-                                            {{#each projects}}
-                                                <h3>{{name}}, ({{description}}), {{technologies}}</h3>
-                                                {{#each team_members}}
-                                                <li>{{name}} ({{title}})</li>
-                                                {{/each}}
-                                            {{/each}}
-                                        {{/each}}
-                                    {{/each}}
-                                </section>
-                            {{/each}}
-                        {{/each}}
-                {{/each}}
-                 <div>
+                <div>
                   FInish
                  </div>
     </div>
