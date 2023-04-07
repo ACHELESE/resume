@@ -1,0 +1,157 @@
+{{!-- Це файл з кодом, який виводиться якщо в нас є помилка --}}
+<header>
+    <div>
+        <div>
+          <button type="button" class="btn btn-primary btn-lg">{{name}}</button>
+          <button type="button" class="btn btn-success">{{description}}</button>
+          <button type="button" class="btn btn-success">{{price}}</button>
+          <button type="button" class="btn btn-secondary">{{category}}</button>
+        </div>
+    </div>
+</header>
+    <hr>
+<div>
+    <div>
+        <p class="fw-bold"><button type="button" class="btn btn-warning">FEATURES</button></p>
+    {{#with features}}
+      {{#with processor}}
+        <button type="button" class="btn btn-outline-danger">Brand :</button> <button type="button" class="btn btn-success" disabled>{{brand}}</button>
+          <button type="button" class="btn btn-outline-danger">model :</button> <button type="button" class="btn btn-success" disabled>{{model}}</button>
+          <button type="button" class="btn btn-outline-danger">Speed :</button> <button type="button" class="btn btn-success" disabled>{{speed}}</button>
+          <button type="button" class="btn btn-outline-danger">cores :</button> <button type="button" class="btn btn-success" disabled>{{cores}}</button>
+          <button type="button" class="btn btn-outline-danger">cache :</button> <button type="button" class="btn btn-success" disabled>{{cache}}</button>
+        {{/with}}
+        <h3> Memory</h3>
+          {{#with memory}}
+        <div>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>Type :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{type}}</button></p>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>Size :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{size}}</button></p>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>Speed :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{speed}}</button></p>
+        </div>
+          {{/with}}
+          <h3> Storage</h3>
+          {{#with storage}}
+        <div>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>Type :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{type}}</button></p>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>Size :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{size}}</button></p>
+        </div>
+          {{/with}}
+          <h3> Display</h3>
+          {{#with display}}
+        <div>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>Size:</button> <button type="button" class="btn btn-outline-secondary" disabled>{{size}}</button></p>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>Resolution :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{resolution}}</button></p>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>Technology :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{technology}}</button></p>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>color_space :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{color_space}}</button></p>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>Brightness :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{brightness}}</button></p>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>refresh_rate :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{refresh_rate}}</button></p>
+        </div>
+          {{/with}}
+        <hr>
+        <p class="fw-bold"><button type="button" class="btn btn-light">Ports</button></p>
+        {{#each ports}}
+          <div>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>type :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{type}}</button></p>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>count :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{count}}</button></p>
+        </div>
+        {{#each features}}
+        <ul>
+                <li>{{this}}</li>
+            </ul>
+        {{/each}}
+        {{/each}}
+        <hr>
+
+        <div>
+          {{#with battery}}
+          <p class="fw-bold"><button type="button" class="btn btn-warning">Battery</button></p> 
+          <button type="button" class="btn btn-outline-danger">Type :</button> <button type="button" class="btn btn-success" disabled>{{type}}</button>
+          <button type="button" class="btn btn-outline-danger">Capasity :</button> <button type="button" class="btn btn-success" disabled>{{capacity}}</button>
+          <button type="button" class="btn btn-outline-danger">life :</button> <button type="button" class="btn btn-success" disabled>{{life}}</button>
+          {{/with}}
+        </div>
+        <br>
+      <div>
+          {{#with dimensions}}
+          <p class="fw-bold"><button type="button" class="btn btn-warning">Dimensions</button></p> 
+          <button type="button" class="btn btn-outline-danger">height :</button> <button type="button" class="btn btn-success" disabled>{{height}}</button>
+          <button type="button" class="btn btn-outline-danger">width :</button> <button type="button" class="btn btn-success" disabled>{{width}}</button>
+          <button type="button" class="btn btn-outline-danger">depth :</button> <button type="button" class="btn btn-success" disabled>{{depth}}</button>
+          {{/with}}
+        </div>
+      <hr>
+      {{#each accessories}}
+          <div>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>name :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{name}}</button></p>
+          <p class="fw-bold"><button type="button" class="btn btn-info" disabled>price :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{price}}</button></p>
+        </div>
+        {{/each}}
+      {{#with exterior}}
+        <button type="button" class="btn btn-outline-dark">EXTERIOR</button>
+        <div>
+        <br>
+        {{#with wheels}}
+        <p class="fw-bold"><button type="button" class="btn btn-outline-warning">Wheels</button></p> 
+        <h5> size  {{size}}</h5> 
+        <h5> type  {{type}}</h5>
+        <h5> color  {{color}}</h5>
+        {{/with}}
+        <br>
+        {{#with headlights}}
+        <p class="fw-bold"><button type="button" class="btn btn-outline-warning">Headlights</button></p> 
+        <h5>type  {{type}}</h5> 
+        <h5> brightness  {{brightness}}</h5>
+        {{/with}}
+        <hr>
+        {{#with sunroof}}
+        <p class="fw-bold"><button type="button" class="btn btn-outline-warning">Sunroof</button></p> 
+        <h5>type  <em>{{type}}</em></h5> 
+        <h5> size  <em>{{size}}</em></h5>
+        {{/with}}
+        <br>
+      {{/with}}
+    {{/with}}
+        <hr>
+        <div>
+          {{#with engine}}
+          <p class="fw-bold"><button type="button" class="btn btn-primary btn-lg">ENGINE</button></p>
+          <button type="button" class="btn btn-outline-danger">Type :</button> <button type="button" class="btn btn-success" disabled>{{type}}</button>
+          <button type="button" class="btn btn-outline-danger">Displacement :</button> <button type="button" class="btn btn-success" disabled>{{displacement}}</button>
+          <button type="button" class="btn btn-outline-danger">Horsepower :</button> <button type="button" class="btn btn-success" disabled>{{horsepower}}</button>
+          <button type="button" class="btn btn-outline-danger">Torque :</button> <button type="button" class="btn btn-success" disabled>{{torque}}</button>
+        {{#with transmission}}
+        <p class="fw-bold"><button type="button" class="btn btn-primary btn-lg">transmission</button></p>
+        <h5>type  {{type}}</h5> 
+        <h5> gears  {{gears}}</h5>
+        {{/with}}
+        {{/with}}
+      </div>
+      <folder>
+        <hr>
+        {{#with price}}
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <button type="button" class="btn btn-danger"><h3>PRICE</h3></button>
+        <button type="button" class="btn btn-warning">Base</button><button type="button" class="btn btn-warning">{{base}}</button>
+        <button type="button" class="btn btn-success">Destination</button><button type="button" class="btn btn-success">{{destination}}</button>
+        </div>
+        <br>
+        {{#with options}}
+        <br>
+        <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+        <button type="button" class="btn btn-outline-primary">navigation</button><button type="button" class="btn btn-outline-primary">{{navigation}}</button>
+        <button type="button" class="btn btn-outline-primary">moonroof</button><button type="button" class="btn btn-outline-primary">{{moonroof}}</button>
+        <button type="button" class="btn btn-outline-primary">premium_paint</button><button type="button" class="btn btn-outline-primary">{{premium_paint}}</button>
+        </div>
+        <div>
+        <br>
+        <hr>
+        <button type="button" class="btn btn-danger"><h2>TOTAL</h2></button><button type="button" class="btn btn-danger"><h2>28990</h2></button>
+        </div>
+      </folder>
+    {{/with}}
+  {{/with}}
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
