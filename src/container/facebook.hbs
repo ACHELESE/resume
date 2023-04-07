@@ -1,0 +1,30 @@
+{{!-- Це файл з кодом, який виводиться якщо в нас є помилка --}}
+<header>
+    <div>
+        <div>
+          <button type="button" class="btn btn-primary btn-lg">{{name}}</button>
+          {{#each users}}
+          <div>
+          <p class="fw-bold"><button type="button" class="btn btn-secondary" disabled>id :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{id}}</button></p>
+          <p class="fw-bold"><button type="button" class="btn btn-success" disabled>gender :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{gender}}</button></p>
+          <p class="fw-bold"><button type="button" class="btn btn-warning" disabled>age :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{age}}</button></p>
+          </div>
+          {{/each}}
+        </div>
+    </div>
+</header>
+    <hr>
+    {{#with groups}}
+    {{#each groups}}
+    <div>
+          <p class="fw-bold"><button type="button" class="btn btn-secondary" disabled>id :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{id}}</button></p>
+          <p class="fw-bold"><button type="button" class="btn btn-success" disabled>name :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{name}}</button></p>
+          <p class="fw-bold"><button type="button" class="btn btn-success" disabled>description :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{description}}</button></p>
+    {{/each}}
+    {{/with}}
+    
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
