@@ -1,0 +1,77 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<header>
+   <h1>{{name}} </h1> 
+   <h2><em>({{birthdate}} - {{deathdate}})</em></h2>
+   <h3>BIRTHPLACE: {{birthplace}}</h3>
+   <h3>DEATHPLACE: {{deathplace}}</h3>
+   <hr>
+   <p>{{nationality}}</p>
+   <p>{{occupation}}</p>
+   <hr>
+   <h4>{{known_for}}</h4>
+   </header>
+<div>
+    {{#each education}}
+    <div>
+        <h2>{{degree}}</h2>
+        <h3>{{field}}, {{institution}}, ({{year}})</h3>
+    </div>
+    {{/each}}
+    <hr>
+    PUBLICATIONS:
+    <section>
+        {{#each notable_publications}}
+        <ul>
+            <li><h3>{{title}} ({{year}})</h3></li>
+        </ul>
+        {{/each}}
+    </section>
+    <hr>PARTNERS:
+    <section>
+        {{#each partners}}
+        <ul>
+            <li><h3>{{name}}, ({{relationship}}) ({{years}})</h3></li>
+        </ul>
+        {{/each}}
+    </section>
+    <hr>AWARDS:
+    <section>
+        {{#each awards}}
+        <h3>{{title}}, ({{year}}) ({{description}})</h3>
+        {{/each}}
+    </section>
+    <section>
+        <h3>{{influences}}</h3>
+        <h3>{{influenced}}</h3>
+        <h3>{{quotes}}</h3> 
+    </section>
+    <hr>
+    <section>
+        {{#each major_discoveries}}
+        <h3>{{title}}, ({{year}}) ({{description}})</h3>
+        {{/each}}
+    </section>
+    <section>
+        {{#with contributions}}
+        <h3>{{title}}, ({{year}}) ({{description}}) {{field}}</h3>
+        {{/with}}
+    </section>
+    <div>
+        <p> {{zip}} {{country}} {{state}} {{city}} {{street}}</p>
+    </div>
+ 
+    <hr>
+                <div>
+                  FInish
+                 </div>
+    </div>
+   
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
