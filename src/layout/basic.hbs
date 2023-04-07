@@ -7,38 +7,15 @@
 
   <head>
     <title>
-     {{page.title}}
+    JS
     </title>
     <meta charset='utf-8' />
+    <link href='css/index.css' rel='stylesheet' />
     <link href='css/index.css' rel='stylesheet' />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
 			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
-
-<body>
-	<header>
-			<h1>{{page.title}}</h1>
-			{{#with header}}
-			<div>
-				<h1>{{name.firstname}} {{name.lastname}}</h1>
-			</div>
-			<div>
-				<b>{{position}}</b>
-			</div>
-			<br>
-			<div>
-				<em>{{salary}}</em>
-			</div>
-			<br>
-			<div>
-				<em>{{adress}}</em>
-			</div>
-			<br>
-			<hr>
-		{{/with}}
-	</header>
-	
-    <nav>
+<nav>
 		{{> link text="skills" href="/skills" line=true }}
 		{{> link text="summary" href="/summary" line=true }}
 		{{> link text="education" href="/education" line=true }}
@@ -46,33 +23,13 @@
 		{{> link text="bio" href="/bio" line=true }}
 		{{> link text="js" href="/js" line=true }}
     </nav>
+<body>
+	
     
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
     {{{body}}}
 
-	<footer>
-		{{#with footer}}
-        	<hr>
-        	<br>
-			<div>
-        		{{> link text=email.text href=email.href blank=true }}   
-            	{{> link text=phone.text href=phone.href blank=true }} 
-            	{{> link text=linkedin.text href=linkedin.href blank=true }} 
-        	</div>
-			<br>
-			<div>
-				<br>
-				<em>Copyright by {{../header/name/firstname}} {{../header/name/lastname}}</em>
-			</div>
-			<br>
-			<div>
-				<em>{{../header/adress}}</em>
-			</div>
-			<br>
-			<hr>
-		{{/with}}
-    </footer>
-			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	
 </body>
 
 </html>

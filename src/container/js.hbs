@@ -1,0 +1,133 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<header>
+    <div>
+        <div>
+                <button type="button" class="btn btn-primary btn-lg">{{name}}
+                </button>
+        </div>
+    </div>
+</header>
+    <br>
+    <hr>
+<div>
+    <div>
+        <p class="fw-bold"><button type="button" class="btn btn-outline-success">{{description}}</button></p>
+    </div>
+    <div>
+        <p class="fw-bold"><button type="button" class="btn btn-warning">HISTORY</button></p>
+    </div>
+    <div>
+        <p> <button type="button" class="btn btn-outline-secondary" disabled>{{history.year}}</button></p>
+    </div>
+    <div>
+        <p class="fw-bold"><button type="button" class="btn btn-outline-dark" disabled>Founder :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{history.founder}}</button></p>
+    </div>
+</div>   
+<hr>
+<div>   
+   <p class="fw-bold"><button type="button" class="btn btn-warning">Type</button></p>
+            {{#each types}} 
+            <ul>
+                <li>{{this}}</li>
+            </ul>
+            {{/each}}
+        </details>
+<hr>
+</div>
+
+<div>
+            <p class="fw-bold"><button type="button" class="btn btn-warning">SYNTAX</button></p>
+
+                {{#with syntax}}
+                <dl>
+            <dd>
+                <ins>Variables</ins> :
+                {{#each variables}}
+                   <i>{{this}}</i> 
+                   {{/each}}
+            </dd>     
+               <dd>
+                <ins>Functions</ins> :
+                {{#each functions}}
+                   <i>{{this}}</i> 
+                   {{/each}}
+            </dd>
+               <dd>
+                <ins>Conditionals</ins> :
+                {{#each conditionals}}
+                   <i>{{this}}</i> 
+                   {{/each}}
+            </dd>   
+                           <dd>
+                <ins>Loops</ins> :
+                {{#each loops}}
+                   <i>{{this}}</i> 
+                   {{/each}}
+            </dd>     
+                         <dd>
+                <ins>Classes</ins> :
+                {{#each classes}}
+                   <i>{{this}}</i> 
+                   {{/each}}
+            </dd> 
+            </dl>
+          {{/with}}
+</div>
+<hr>
+    <div>
+         <p class="fw-bold"><button type="button" class="btn btn-info">FEATURES</button></p>
+        {{#each features}} 
+        <ul>
+            <li>{{this}}</li>
+        </ul>
+        {{/each}}
+    </div>
+    <br>
+    <main>
+        <p class="fw-bold"><button type="button" class="btn btn-info">libraries</button></p>
+         {{#each libraries}} 
+            <ul>
+                <li>{{this}}</li>
+            </ul>
+        {{/each}}
+    </main>
+        <hr>
+   <main>
+        <p class="fw-bold"><button type="button" class="btn btn-info">libraries</button></p>
+        {{#each tools}} 
+            <ul>
+                <li>{{this}}</li>
+            </ul>
+        {{/each}}
+   </main>
+    <hr>
+<div>
+        {{#each community}}
+        <div>
+                <button type="button" class="btn btn-outline-danger">Name :</button> <button type="button" class="btn btn-success" disabled>{{name}}</button>
+                </div>
+                <div>
+                <button type="button" class="btn btn-outline-danger">gitType :</button> <button type="button" class="btn btn-success" disabled>{{type}}</button>
+        </div>
+        <hr>
+        {{/each}}
+</div>
+
+<br>
+ 
+    <hr>
+                <div>
+                  FInish
+                 </div>
+    </div>
+   
+</div>
+
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
