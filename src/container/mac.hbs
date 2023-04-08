@@ -86,70 +86,10 @@
           <p class="fw-bold"><button type="button" class="btn btn-info" disabled>price :</button> <button type="button" class="btn btn-outline-secondary" disabled>{{price}}</button></p>
         </div>
         {{/each}}
-      {{#with exterior}}
-        <button type="button" class="btn btn-outline-dark">EXTERIOR</button>
-        <div>
-        <br>
-        {{#with wheels}}
-        <p class="fw-bold"><button type="button" class="btn btn-outline-warning">Wheels</button></p> 
-        <h5> size  {{size}}</h5> 
-        <h5> type  {{type}}</h5>
-        <h5> color  {{color}}</h5>
-        {{/with}}
-        <br>
-        {{#with headlights}}
-        <p class="fw-bold"><button type="button" class="btn btn-outline-warning">Headlights</button></p> 
-        <h5>type  {{type}}</h5> 
-        <h5> brightness  {{brightness}}</h5>
-        {{/with}}
-        <hr>
-        {{#with sunroof}}
-        <p class="fw-bold"><button type="button" class="btn btn-outline-warning">Sunroof</button></p> 
-        <h5>type  <em>{{type}}</em></h5> 
-        <h5> size  <em>{{size}}</em></h5>
-        {{/with}}
-        <br>
-      {{/with}}
+      
     {{/with}}
         <hr>
-        <div>
-          {{#with engine}}
-          <p class="fw-bold"><button type="button" class="btn btn-primary btn-lg">ENGINE</button></p>
-          <button type="button" class="btn btn-outline-danger">Type :</button> <button type="button" class="btn btn-success" disabled>{{type}}</button>
-          <button type="button" class="btn btn-outline-danger">Displacement :</button> <button type="button" class="btn btn-success" disabled>{{displacement}}</button>
-          <button type="button" class="btn btn-outline-danger">Horsepower :</button> <button type="button" class="btn btn-success" disabled>{{horsepower}}</button>
-          <button type="button" class="btn btn-outline-danger">Torque :</button> <button type="button" class="btn btn-success" disabled>{{torque}}</button>
-        {{#with transmission}}
-        <p class="fw-bold"><button type="button" class="btn btn-primary btn-lg">transmission</button></p>
-        <h5>type  {{type}}</h5> 
-        <h5> gears  {{gears}}</h5>
-        {{/with}}
-        {{/with}}
-      </div>
-      <folder>
-        <hr>
-        {{#with price}}
-        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-        <button type="button" class="btn btn-danger"><h3>PRICE</h3></button>
-        <button type="button" class="btn btn-warning">Base</button><button type="button" class="btn btn-warning">{{base}}</button>
-        <button type="button" class="btn btn-success">Destination</button><button type="button" class="btn btn-success">{{destination}}</button>
-        </div>
-        <br>
-        {{#with options}}
-        <br>
-        <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
-        <button type="button" class="btn btn-outline-primary">navigation</button><button type="button" class="btn btn-outline-primary">{{navigation}}</button>
-        <button type="button" class="btn btn-outline-primary">moonroof</button><button type="button" class="btn btn-outline-primary">{{moonroof}}</button>
-        <button type="button" class="btn btn-outline-primary">premium_paint</button><button type="button" class="btn btn-outline-primary">{{premium_paint}}</button>
-        </div>
-        <div>
-        <br>
-        <hr>
-        <button type="button" class="btn btn-danger"><h2>TOTAL</h2></button><button type="button" class="btn btn-danger"><h2>28990</h2></button>
-        </div>
-      </folder>
-    {{/with}}
-  {{/with}}
+        
 
 {{!-- 
     Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
